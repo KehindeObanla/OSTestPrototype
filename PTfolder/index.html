@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+    <script type="text/javascript">
+    window.location = "redirect.html";
+    </script>
+    <![endif]-->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg> -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="World" content="">
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #862633;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        .active {
+            background-color: #e2bb0d;
+        }
+        
+        .button {
+            border-radius: 50%;
+            text-align: center;
+            width: 150px;
+            border: 5px outset #e2bb0d;
+            padding-left: 10px;
+            padding-right: 10px;
+            min-width: 100px;
+            color: #e2bb0d;
+            height: 150px;
+            line-height: 21px;
+            min-width: 100px;
+            font-size: 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .button:hover {
+            opacity: 1
+        }
+        
+        .myDiv {
+            border: 5px outset #e2bb0d;
+            background-color: #862633;
+            text-align: center;
+            height: 900px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 30px
+            /* position: relative; */
+        }
+        
+        #TEST {
+            float: right;
+        }
+        
+        .content {
+            color: white;
+            float: left;
+        }
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .legend ul li {
+            /*  position: absolute; */
+            float: left;
+            margin-right: 25px;
+        }
+        
+        .bluebox {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+        }
+    </style>
+    <title>World</title>
+</head>
+
+<body onload="myFunction()">
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <lI id="TEST"><a href="#about">Admin</a></li>
+    </ul>
+
+    <br>
+    <div class="myDiv">
+        <div class="content">
+            <p class="para">The select a department.</p>
+
+            <form action="/action_page.php">
+                <label for="cars">department</label>
+                <select name="cars" id="cars">
+                <option value="volvo">computer Science</option>
+                <option value="saab">math</option>
+              </select>
+                <br><br>
+
+            </form>
+        </div>
+
+        <div id="div3" class="center">
+
+        </div>
+
+    </div>
+
+    <script>
+        function myFunction() {
+
+            var classes = ["intro to computer Architecture", "Advanced structure and Algorithms", "Data structures and ADT", "Object Orinented programming", "computer science 1", "discrete Structure and analysis"]
+            for (var i = 0; i < 6; i++) {
+                var button = document.createElement("button");
+                button.id = "btn" + i;
+                button.class = "button";
+                var id = button.id;
+                button.innerHTML = classes[i];
+                // 2. Append somewhere
+                var body = document.getElementById("div3");
+                body.appendChild(button);
+                var element = document.getElementById(id);
+                element.classList.add("button");
+
+                element.style.top = Math.floor((Math.random() * 250) + 1) + "px";
+
+                element.style.left = Math.floor((Math.random() * 170) + 1) + "px";
+
+            }
+
+
+
+        }
+    </script>
+
+</body>
