@@ -66,7 +66,13 @@
             min-width: 100px;
             font-size: 16px;
             text-decoration: none;
-            position: relative;
+            /* position: relative; */
+        }
+        
+        .inst-btn {
+            color: white;
+            margin: 0;
+            border: 0;
         }
         
         .button:hover {
@@ -102,7 +108,17 @@
             transform: translate(-50%, -50%);
         }
         
-        .legend ul li {
+        .wrapper {
+            content: " ";
+            width: 10%;
+            height: 1px;
+            margin: 0 10px;
+            vertical-align: super;
+            background-color: black;
+            display: inline-block;
+        }
+        
+        .com .legend ul li {
             /*  position: absolute; */
             float: left;
             margin-right: 25px;
@@ -113,6 +129,30 @@
             width: 20px;
             height: 20px;
             background-color: blue;
+        }
+        
+        hr {
+            width: 20%;
+        }
+        
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+        
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 15px solid rgb(20, 20, 20);
+            border-bottom: 15px solid transparent;
         }
     </style>
     <title>World</title>
@@ -143,7 +183,7 @@
         </div>
 
         <div id="div3" class="center">
-
+            <line x1="340" y1="360" x2="740" y2="360" style="stroke:rgb(0,118,192);stroke-width:2" marker-end="url(#arrow)"></line>
         </div>
 
     </div>
@@ -153,20 +193,49 @@
 
             var classes = ["intro to computer Architecture", "Advanced structure and Algorithms", "Data structures and ADT", "Object Orinented programming", "computer science 1", "discrete Structure and analysis"]
             for (var i = 0; i < 6; i++) {
-                var button = document.createElement("button");
-                button.id = "btn" + i;
-                button.class = "button";
-                var id = button.id;
-                button.innerHTML = classes[i];
-                // 2. Append somewhere
-                var body = document.getElementById("div3");
-                body.appendChild(button);
-                var element = document.getElementById(id);
-                element.classList.add("button");
+                if (i == 2 || i == 5) {
+                    var button = document.createElement("button");
+                    button.id = "btn" + i;
+                    button.class = "button";
+                    var id = button.id;
+                    button.innerHTML = classes[i];
+                    // 2. Append somewhere
+                    var body = document.getElementById("div3");
+                    body.appendChild(button);
+                    var element = document.getElementById(id);
+                    element.classList.add("button");
 
-                element.style.top = Math.floor((Math.random() * 250) + 1) + "px";
+                } else {
+                    var button = document.createElement("button");
+                    button.id = "btn" + i;
+                    button.class = "button";
+                    var id = button.id;
+                    button.innerHTML = classes[i];
+                    // 2. Append somewhere
+                    var body = document.getElementById("div3");
+                    body.appendChild(button);
+                    var element = document.getElementById(id);
+                    element.classList.add("button");
+                    var button2 = document.createElement("button");
+                    button2.id = "btnn" + i;
+                    button2.class = "wrapper";
+                    var id2 = button2.id;
+                    body.append(button2);
+                    var element2 = document.getElementById(id2);
+                    element2.classList.add("wrapper");
+                    var arrowh = document.createElement("i");
+                    arrowh.id = "arr" + i;
+                    arrowh.class = "triangle";
+                    body.append(arrowh);
+                    var arrowid = arrowh.id;
+                    var element3 = document.getElementById(arrowid);
+                    element3.classList.add("triangle");
+                    /* element.append(newA); */
+                    element.style.top = Math.floor((Math.random() * 250) + 1) + "px";
 
-                element.style.left = Math.floor((Math.random() * 170) + 1) + "px";
+                    element.style.left = Math.floor((Math.random() * 170) + 1) + "px";
+                }
+
 
             }
 
